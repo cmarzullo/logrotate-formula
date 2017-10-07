@@ -1,0 +1,7 @@
+{%- for key,vals in conf.items() -%}
+{{ key }} {
+  {% for val in vals -%}
+  {{ val }}
+  {% endfor %}
+}
+{% endfor -%}

@@ -1,0 +1,6 @@
+# vim: ft=yaml
+# Defaults for logrotate
+
+logrotate:
+  enabled: false
+  pkg: logrotate

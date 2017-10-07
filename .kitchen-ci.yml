@@ -1,0 +1,33 @@
+# vim: ft=yaml
+---
+driver:
+  name: linode
+
+provisioner:
+  name: salt_solo
+  formula: logrotate
+  state_top:
+    base:
+      "*":
+        - logrotate
+  pillars:
+    top.sls:
+      base:
+        "*":
+          - logrotate
+
+platforms:
+  - name: debian_jessie
+
+suites:
+  - name: default
+    provisioner:
+      pillars:
+        logrotate.sls:
+          logrotate:
+            enabled: true
+
+  - name: custom
+    provisioner:
+      pillars-from-files:
+        logrotate.sls: pillar-custom.sls
