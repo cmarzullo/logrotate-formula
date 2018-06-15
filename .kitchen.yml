@@ -18,6 +18,7 @@ provisioner:
 
 platforms:
   - name: bento/debian-8
+  - name: bento/debian-9
 
 suites:
   - name: default
